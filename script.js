@@ -91,29 +91,86 @@ const fprint = (text) => {
 //coding challenge
 
 //Arrays 
-const table = ['amine','said','ahmed']
-const tab = new Array("amine","said","ahmed")
-console.log(table);
-console.log(tab);
-// fprint(table.length)
-//array operations
-    //methods 
-        //push --Add element
-        tab.push("fahd");
-        fprint(tab);
+// const table = ['amine','said','ahmed']
+// const tab = new Array("amine","said","ahmed")
+// console.log(table);
+// console.log(tab);
+// // fprint(table.length)
+// //array operations
+//     //methods 
+//         //push --Add element
+//         tab.push("fahd");
+//         fprint(tab);
 
-        //pop --remove the last element
-        tab.pop();
-        fprint(tab);
+//         //pop --remove the last element
+//         tab.pop();
+//         fprint(tab);
 
-        //indexOf --index of an element in the array -if not exist return -1
-        fprint(tab.indexOf('said'));
-        fprint(tab.indexOf('null'));
+//         //indexOf --index of an element in the array -if not exist return -1
+//         fprint(tab.indexOf('said'));
+//         fprint(tab.indexOf('null'));
 
-        //includes --verify that an element exist in array
-        fprint(tab.includes('amine'));
-        fprint(tab.includes('null'));
+//         //includes --verify that an element exist in array
+//         fprint(tab.includes('amine'));
+//         fprint(tab.includes('null'));
         
 
 
 //Arrays
+
+//objects
+// const pers = {
+//     firstName  : "Mohammed Amine",
+//     lastName : "BELFKIH",
+//     birthday : 1993,
+//     adress : "temara",
+//     job : "IT",
+//     friends : ['Oussama','Ayoub','Adnane'],
+
+//     calAge : function(){
+//         return 2021 - this.birthday
+//     } 
+// }
+
+// fprint(`${pers.firstName} is a ${pers.calAge()}-old ${pers.job}`)
+
+//challenge 
+
+const mark = {
+    fullName : "Mark Miller",
+    mass : 78,
+    height : 1.69,
+    calBMI : function(){
+        return this.mass / (this.height**2)
+    },
+    compareTo : function(pers){
+        return this.calBMI() - pers.calBMI()
+    }
+}
+const john = {
+    fullName : "John Smith",
+    mass : 92,
+    height : 1.95,
+    calBMI : function(){
+        return this.mass / (this.height**2)
+    },
+    compareTo : function(pers){
+        return this.calBMI() - pers.calBMI()
+    }
+}
+const list = {
+    higher : null,
+    lower : null,
+    equals : 0
+}
+if (mark.compareTo(john)>0) {
+    list.higher = mark
+    list.lower = john
+}else if(mark.compareTo(john) == 0){
+    list.higher = john
+    list.lower = mark
+}else{
+    list.equals = 1
+}
+list.equals ==0 ? fprint(`${list.higher.fullName} BMI (${list.higher.calBMI()}) is higher than ${list.lower.fullName} BMI (${list.lower.calBMI()})`) : fprint("equals")
+//objects
