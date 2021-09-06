@@ -1,17 +1,17 @@
 'use strict';
 let line = 0;
-const fprint = (text) => {
-    let e = document.createElement("p")
-    if(Array.isArray(text)){
-        let message = "[";
-        text.forEach(item => message+= item+",")
-        message += "]"
-        e.appendChild(document.createTextNode(`Print ${++line} : ` + message))
-    }else{
-        e.appendChild(document.createTextNode(`Print ${++line} : ` + text))
-    }
-    document.getElementById("print").appendChild(e)
-}
+const fprint = text => {
+  let e = document.createElement('p');
+  if (Array.isArray(text)) {
+    let message = '[';
+    text.forEach(item => (message += item + ','));
+    message += ']';
+    e.appendChild(document.createTextNode(`Print ${++line} : ` + message));
+  } else {
+    e.appendChild(document.createTextNode(`Print ${++line} : ` + text));
+  }
+  document.getElementById('print').appendChild(e);
+};
 
 // const a = {
 //     name: 'amine',
@@ -35,7 +35,7 @@ const fprint = (text) => {
 //     case 'sunday':
 //         fprint("enjoy the Weekend")
 //         break
-//     default: 
+//     default:
 //         fprint("course default")
 //         break
 // }
@@ -44,13 +44,13 @@ const fprint = (text) => {
 // let tip = (bill>=50 && bill<= 300)? bill*0.15 : bill*0.20;
 // fprint(`The bill was ${bill}, the tip was ${tip}, the total was ${bill+tip}`)
 
-// //functions 
+// //functions
 
 // //function declaration
 // function calAge(birthday){
 //     return 2021-birthday;
 // }
-// //function expression 
+// //function expression
 // const calAge2 = function(birthday){
 //     return 2021-birthday;
 // }
@@ -71,7 +71,7 @@ const fprint = (text) => {
 // fprint(yearsUntilRetirement(1998,"BELFKIH Chaimae"));
 // fprint(yearsUntilRetirement(1963,"BELFKIH Adil"));
 
-// Coding challenge #1 
+// Coding challenge #1
 // const calcAverage = (s1,s2,s3) => (s1+s2+s3)/3;
 
 // const avgKoalas = calcAverage(44,23,71);
@@ -90,14 +90,14 @@ const fprint = (text) => {
 
 //coding challenge
 
-//Arrays 
+//Arrays
 // const table = ['amine','said','ahmed']
 // const tab = new Array("amine","said","ahmed")
 // console.log(table);
 // console.log(tab);
 // // fprint(table.length)
 // //array operations
-//     //methods 
+//     //methods
 //         //push --Add element
 //         tab.push("fahd");
 //         fprint(tab);
@@ -113,8 +113,6 @@ const fprint = (text) => {
 //         //includes --verify that an element exist in array
 //         fprint(tab.includes('amine'));
 //         fprint(tab.includes('null'));
-        
-
 
 //Arrays
 
@@ -129,48 +127,62 @@ const fprint = (text) => {
 
 //     calAge : function(){
 //         return 2021 - this.birthday
-//     } 
+//     }
 // }
 
 // fprint(`${pers.firstName} is a ${pers.calAge()}-old ${pers.job}`)
 
-//challenge 
+//challenge
 
-const mark = {
-    fullName : "Mark Miller",
-    mass : 78,
-    height : 1.69,
-    calBMI : function(){
-        return this.mass / (this.height**2)
-    },
-    compareTo : function(pers){
-        return this.calBMI() - pers.calBMI()
-    }
-}
-const john = {
-    fullName : "John Smith",
-    mass : 92,
-    height : 1.95,
-    calBMI : function(){
-        return this.mass / (this.height**2)
-    },
-    compareTo : function(pers){
-        return this.calBMI() - pers.calBMI()
-    }
-}
-const list = {
-    higher : null,
-    lower : null,
-    equals : 0
-}
-if (mark.compareTo(john)>0) {
-    list.higher = mark
-    list.lower = john
-}else if(mark.compareTo(john) == 0){
-    list.higher = john
-    list.lower = mark
-}else{
-    list.equals = 1
-}
-list.equals ==0 ? fprint(`${list.higher.fullName} BMI (${list.higher.calBMI()}) is higher than ${list.lower.fullName} BMI (${list.lower.calBMI()})`) : fprint("equals")
+// const mark = {
+//     fullName : "Mark Miller",
+//     mass : 78,
+//     height : 1.69,
+//     calBMI : function(){
+//         return this.mass / (this.height**2)
+//     },
+//     compareTo : function(pers){
+//         return this.calBMI() - pers.calBMI()
+//     }
+// }
+// const john = {
+//     fullName : "John Smith",
+//     mass : 92,
+//     height : 1.95,
+//     calBMI : function(){
+//         return this.mass / (this.height**2)
+//     },
+//     compareTo : function(pers){
+//         return this.calBMI() - pers.calBMI()
+//     }
+// }
+// const list = {
+//     higher : null,
+//     lower : null,
+//     equals : 0
+// }
+// if (mark.compareTo(john)>0) {
+//     list.higher = mark
+//     list.lower = john
+// }else if(mark.compareTo(john) == 0){
+//     list.higher = john
+//     list.lower = mark
+// }else{
+//     list.equals = 1
+// }
+//list.equals ==0 ? fprint(`${list.higher.fullName} BMI (${list.higher.calBMI()}) is higher than ${list.lower.fullName} BMI (${list.lower.calBMI()})`) : fprint("equals")
 //objects
+
+//while loop
+
+let i = 0;
+let t = [];
+const run = () => Math.trunc(Math.random() * 20) + 1;
+let n = run();
+while (n !== 20) {
+  t.push(n);
+  n = run();
+  i++;
+}
+fprint(`${i} cycle before generate number 6`);
+fprint(t);
